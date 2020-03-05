@@ -132,7 +132,7 @@ var createPdf = (inputConfig, fileName) => {
 
         page.forEach(point => {
             if (point.color) doc.fillColor(point.color);
-            doc.fillColor(defaultColor);
+            else doc.fillColor(defaultColor);
             doc.text(point.value, point.col, point.row);
         })
     })

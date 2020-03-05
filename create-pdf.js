@@ -1,4 +1,4 @@
-var arrObject = require('./utils/array-object');
+const arrObject = require('./utils/array-object');
 const PDFDocument = require('pdfkit');
 const fs = require('fs');
 
@@ -18,39 +18,36 @@ config = {
     color_default: "blue",
     title: "mau giay moi",
     author: "intenet"
-},
-    mask = {
-        ten_kh: {
-            col: 120,
-            row: 100
-        },
-        sotrang: {
-            col: 540,
-            row: 380,
-            color: "red"
-        }
+}
+mask = {
+    name: {
+        col: 120,
+        row: 100
     },
-    list_data = [
-        { ten_kh: "Nguyen Van Dinh", sotrang: 1 },
-        { ten_kh: "Nguyen Van anh", sotrang: 2 },
-        { ten_kh: "Nguyen Van em", sotrang: 3 },
-        { ten_kh: "Nguyen Van minh", sotrang: 4 },
-        { ten_kh: "Nguyen Van ha", sotrang: 5 },
-        { ten_kh: "Nguyen Van hung", sotrang: 6 },
-        { ten_kh: "Nguyen Van hoa", sotrang: 7 }
-    ]
+    page: {
+        col: 540,
+        row: 380,
+        color: "red"
+    }
+}
+list_data = [
+    { name: "Nguyen Van Dinh", page: 1 },
+    { name: "Nguyen Van Anh", page: 2 }
+]
 
-var pagesPrint = [];
-list_data.forEach(kh => {
-    pagesPrint.push(arrObject.getMatrix(mask, kh, { col: 0, row: 0 }));
+const pagesPrint = [];
+list_data.forEach(data => {
+    let objUser = arrObject.getMatrix(mask, data, { col: 0, row: 0 })
+    pagesPrint.push(objUser);
 })
+// console.log(pagesPrint);
 
-var doc = new PDFDocument(
+const doc = new PDFDocument(
     config.page_config
 );
-var outputFilename = './pdf/giay_moi_a4.pdf';
+const defaultColor = config.color_default;
 
-var defaultColor = config.color_default;
+const outputFilename = './pdf/giay_moi_a4.pdf';
 doc.pipe(fs.createWriteStream(outputFilename));
 
 doc.info['Title'] = config.title;
@@ -67,7 +64,7 @@ pagesPrint.forEach((page, idx) => {
     doc.image(config.background.image, config.background.left, config.background.top, { width: config.background.width, height: config.background.height });
     page.forEach(point => {
         if (point.color) doc.fillColor(point.color);
-        doc.fillColor(defaultColor);
+        else doc.fillColor(defaultColor);
         doc.text(point.value, point.col, point.row);
     })
 })
