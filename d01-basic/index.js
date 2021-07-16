@@ -1,9 +1,9 @@
-window.onload = function() {
+window.onload = function () {
 	returnH1Tag();
 	// console.log(a);
 };
 
-var a = [ null, undefined, 1, 2, 3, 'a', 'b', 'c' ];
+var a = [null, undefined, 1, 2, 3, 'a', 'b', 'c'];
 
 function returnH1Tag() {
 	var h1Tag = document.getElementsByTagName('h1');
