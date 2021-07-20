@@ -2,7 +2,7 @@ function tinhtong(a, b){
 	return (a+b);
 }
 var x = tinhtong(5, 3);
-console.log("Tong la: "+x);
+console.log("Tong la: " + x);
 
 //-----------------------------------
 function hello(){
@@ -11,6 +11,7 @@ function hello(){
 function goiHam(fn){
 	fn();
 }
+hello();
 goiHam(hello);
 
 //------------------------------------
@@ -18,4 +19,4 @@ var tong = function(){
 	console.log("Lap trinh NodeJS");
 }
 tong();
-goiHam(tong)
+goiHam(tong);
