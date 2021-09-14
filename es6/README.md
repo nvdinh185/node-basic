@@ -1,0 +1,25 @@
+1. TỪ KHÓA let
+
+2. TỪ KHÓA const
+
+3. VÒNG LẶP for of
+
+4. VÒNG LẶP for in
+
+5. TEMPLATE LITERALS
+
+6. GIÁ TRỊ MẶC ĐỊNH CHO THAM SỐ (Default Parameters)
+
+7. ARROW FUNCTION
+
+8. CLASSES
+
+9. REST PARAMETERS
+
+10. SPREAD OPERATOR
+
+11. DESTRUCTURING ASSIGNMENT
+
+12. MODULES
+
+13. PROMISE
