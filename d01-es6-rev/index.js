@@ -19,13 +19,6 @@ class Human {
   };
 }
 
-function HumanObj() { }
-
-let blba = {
-  // Object Literal
-  name: "Hieu",
-};
-
 let hieu = new Human("Hieu");
 hieu.func1();
 
@@ -46,7 +39,7 @@ console.log(myFather);
 
 let arr1 = [1, 2, 3, 4, 5]; // 1 dia chi bien
 
-arr1.splice(arr.length, 0, 6, 7, 8, () => console.log(123));
+arr1.splice(arr1.length, 0, 6, 7, 8, () => console.log(123));
 console.log("origin arr", arr1);
 
 let arrNew1 = [...arr1]; // 1 dia chi bien khac
@@ -71,7 +64,7 @@ testRest(4, 5, 6);
 
 ////// DESTRUCTURING
 // OBJ
-let obj = { a: "a", b: "b" };
+let obj = { a: "123", b: "b" };
 let { a, b } = obj;
 console.log(a, b);
 
