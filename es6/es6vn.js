@@ -219,6 +219,23 @@ let colors = [...color1, "Nâu", "Đen", "Trắng", ...color2];
 console.log(colors);
 // ["Xanh", "Đỏ", "Tím", "Nâu", "Đen", "Trắng", "Vàng", "Hồng"]
 
+let obj1 = {
+    a: 1,
+    b: "123"
+}
+
+let obj2 = {
+    c: 2,
+    d: "456"
+}
+
+let obj12 = {
+    ...obj1,
+    e: "789",
+    ...obj2
+}
+console.log(obj12);// { a: 1, b: '123', e: '789', c: 2, d: '456' }
+
 // 11: DESTRUCTURING ASSIGNMENT
 
 // Cú pháp ES6
