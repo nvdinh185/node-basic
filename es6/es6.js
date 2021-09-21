@@ -86,9 +86,10 @@ console.log(a);
 console.log(b);
 // expected output: 20
 
+// rest
 [a, b, ...rest] = [10, 20, 30, 40, 50];
 
-console.log(rest);
+console.log(rest);//30, 40, 50
 
 // Default Parameters
 function myFunction(x, y = 10) {

@@ -6,10 +6,10 @@ const axios = require('axios');
 for (let i = 0; i < 5; i++) {
     console.log(i); // 0,1,2,3,4
 }
-// console.log(i); // undefined
+// console.log(i); // i is not defined
 
 // 2: TỪ KHÓA const
-
+// không thể gán
 // Thay đổi giá trị thuộc tính của đối tượng
 const PERSON = { name: "NIIT", age: 18 };
 console.log(PERSON.age); // 18
@@ -181,8 +181,8 @@ function sortNumbers(...numbers) {
     return numbers.sort();
 }
 
-console.log(sortNumbers(3, 5, 7));
-// Kết quả: [3, 5, 7]
+console.log(sortNumbers(3, 6, 5, 7));
+// Kết quả: [3, 5, 6, 7]
 
 console.log(sortNumbers(3, 5, 7, 1, 0));
 // Kết quả: [0, 1, 3, 5, 7]
@@ -278,20 +278,17 @@ promise.then(value => {
 // 13. Async / Await
 
 // cách 1: 
-function getJSON() {
+const getJSON = new Promise(function (resolve) {
+    axios.get('https://tutorialzine.com/misc/files/example.json')
+        .then(function (json) {
 
-    // To make the function blocking we manually create a Promise.
-    return new Promise(function (resolve) {
-        axios.get('https://tutorialzine.com/misc/files/example.json')
-            .then(function (json) {
+            // The data from the request is available in a .then block
+            // We return the result using resolve.
+            resolve(json);
+        });
+});
 
-                // The data from the request is available in a .then block
-                // We return the result using resolve.
-                resolve(json);
-            });
-    });
-}
-getJSON()
+getJSON
     .then(res => {
         console.log(res.data.length);
     }).catch(err => {
@@ -306,7 +303,7 @@ axios.get('https://tutorialzine.com/misc/files/example.json')
 // Async/Await approach
 
 // The async keyword will automatically create a new Promise and return it.
-async function getJSONAsync() {
+const getJSONAsync = async () => {
 
     // The await keyword saves us from having to write a .then() block.
     let json = await axios.get('https://tutorialzine.com/misc/files/example.json');
@@ -315,6 +312,7 @@ async function getJSONAsync() {
     // We return it just like in a regular synchronous function.
     return json;
 }
+
 getJSONAsync()
     .then(res => {
         console.log(res.data.length);
