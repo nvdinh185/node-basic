@@ -12,3 +12,8 @@ class miniHero extends Hero {
 
 let miniH = new miniHero({ name: "health", age: 10 });
 console.log(miniH);
+// miniHero {
+//     options: { name: 'health', age: 10 },
+//     health: 50,
+//         heal: [Function(anonymous)]
+// }
