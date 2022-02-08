@@ -1,0 +1,1 @@
+# https://codelearn.io/sharing/prototype-trong-javascript
