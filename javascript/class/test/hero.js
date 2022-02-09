@@ -6,6 +6,10 @@ class Hero {
             return (this.health += 10);
         };
     }
+
+    run() {
+        console.log(`I have ${this.health} health and I am running...`);
+    }
 }
 
 // let bigHero = new Hero({ name: "health", age: 10 }, 100);
@@ -16,6 +20,7 @@ class Hero {
 //         heal: [Function(anonymous)]
 // }
 
-// console.log(bigHero.heal());//110
+// console.log(bigHero.heal()); // 110
+// bigHero.run(); // I have 100 health and I am running...
 
 module.exports = Hero;

@@ -17,3 +17,5 @@ console.log(miniH);
 //     health: 50,
 //         heal: [Function(anonymous)]
 // }
+console.log(miniH.heal()); // 55
+miniH.run(); // I have 55 health and I am running...
