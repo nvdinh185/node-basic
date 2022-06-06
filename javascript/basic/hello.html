@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+
+    <button onclick="hello()">Click Me!</button>
+
+    <p id="demo"></p>
+
+</body>
+<script>
+    function hello() {
+        "use strict";
+        /* Start of your code */
+        let fullText = 'Hello';
+        function greetMe(yourName) {
+            fullText += ' ' + yourName;
+            alert(fullText);
+        }
+
+        greetMe('Dinh');
+        document.getElementById("demo").innerHTML = fullText;
+        /* End of your code */
+    }
+</script>
+
+</html>
