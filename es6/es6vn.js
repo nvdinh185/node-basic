@@ -1,6 +1,7 @@
 const axios = require('axios');
 // https://niithanoi.edu.vn/cac-tinh-nang-cua-es6.html
 
+//======================================================================================================================================
 // 1: TỪ KHÓA let
 
 for (let i = 0; i < 5; i++) {
@@ -8,6 +9,7 @@ for (let i = 0; i < 5; i++) {
 }
 // console.log(i); // i is not defined
 
+//======================================================================================================================================
 // 2: TỪ KHÓA const
 // không thể gán
 // Thay đổi giá trị thuộc tính của đối tượng
@@ -17,6 +19,9 @@ PERSON.age = 19;
 console.log(PERSON.age); // 19
 // Thêm thuộc tính cho đối tượng
 PERSON.gender = "man";
+console.log(PERSON);
+// Xóa thuộc tính của đối tượng
+delete PERSON.age;
 console.log(PERSON);
 
 // Thay đổi phần tử trong mảng
@@ -28,7 +33,11 @@ console.log(COLORS[0]); // Hồng
 // Thêm phần tử vào mảng
 COLORS.push("Trắng");
 console.log(COLORS);
+// Xóa phần tử trong mảng
+COLORS.shift();
+console.log(COLORS);
 
+//======================================================================================================================================
 // 3. VÒNG LẶP for of
 // Lặp qua mảng
 let letters = ["a", "b", "c", "d", "e", "f"];
@@ -44,6 +53,7 @@ for (character of greet) {
     console.log(character);
 }
 
+//======================================================================================================================================
 // 4. VÒNG LẶP for in
 
 const objSinhVien = {
@@ -56,6 +66,7 @@ for (const key in objSinhVien) {
     console.log(key);
 }
 
+//======================================================================================================================================
 // 5: TEMPLATE LITERALS
 
 // Chuỗi nhiều dòng
@@ -69,6 +80,7 @@ let b = 9;
 let result = `Tổng của ${a} và ${b} là: ${a + b}.`;
 console.log(result); // Tổng của 6 và 9 là: 15.
 
+//======================================================================================================================================
 // 6: GIÁ TRỊ MẶC ĐỊNH CHO THAM SỐ
 
 function sayHello(name = "NIIT") {
@@ -78,6 +90,7 @@ function sayHello(name = "NIIT") {
 console.log(sayHello()); // Xin chào NIIT!
 console.log(sayHello('Đen Vâu')); // Xin chào Đen Vâu
 
+//======================================================================================================================================
 // 7: ARROW FUNCTION
 
 var square = x => x * x;
@@ -133,6 +146,7 @@ var p = new Person('Linh Trang', 18);
 var printInfo = p.getInfo();
 printInfo(); // Tôi là Linh Trang. 18 tuổi
 
+//======================================================================================================================================
 // 8: CLASSES
 
 // Tạo một class
@@ -175,6 +189,7 @@ console.log(square1.getPerimeter()); // 20
 // Tính diện tích hình vuông
 console.log(square1.getArea()); // 25
 
+//======================================================================================================================================
 // 9: REST PARAMETERS
 
 function sortNumbers(...numbers) {
@@ -194,6 +209,7 @@ function arrayNumbers(a, b, ...numbers) {
 console.log(arrayNumbers(3, 5, 7, 1, 0));
 // Kết quả: [7, 0, 1]
 
+//======================================================================================================================================
 // 10: SPREAD OPERATOR
 
 function addNumbers(a, b, c) {
@@ -236,6 +252,7 @@ let obj12 = {
 }
 console.log(obj12);// { a: 1, b: '123', e: '789', c: 2, d: '456' }
 
+//======================================================================================================================================
 // 11: DESTRUCTURING ASSIGNMENT
 
 // Cú pháp ES6
@@ -263,6 +280,7 @@ let { name, age } = school; // Phép gán hủy cấu trúc đối tượng
 console.log(name); // NIIT
 console.log(age); // 18
 
+//======================================================================================================================================
 // 12. PROMISE
 
 const promise = new Promise(function (resolve, reject) {
@@ -275,6 +293,7 @@ promise.then(value => {
     console.log(value);
 });
 
+//======================================================================================================================================
 // 13. Async / Await
 
 // cách 1: 

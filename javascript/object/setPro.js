@@ -1,5 +1,5 @@
-let key = "hello";
-let val = "world";
+const key = "hello";
+const val = "world";
 
 // Old way 
 // const obj = {
