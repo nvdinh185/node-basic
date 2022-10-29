@@ -1,5 +1,4 @@
 const axios = require('axios');
-// https://niithanoi.edu.vn/cac-tinh-nang-cua-es6.html
 
 //======================================================================================================================================
 // 1: TỪ KHÓA let
@@ -71,7 +70,8 @@ for (const key in objSinhVien) {
 
 // Chuỗi nhiều dòng
 let str = `Mình muốn có một chuỗi
-    ở trên nhiều dòng như thế này!`;
+    ở trên nhiều dòng
+    như thế này!`;
 console.log(str);
 
 // Tạo chuỗi sử dụng biến và biểu thức
@@ -97,7 +97,7 @@ var square = x => x * x;
 console.log(square(5)); // 25
 
 // Một tham số, Một câu lệnh
-var hello = name => console.log("Xin chào " + name + "!");
+var hello = name => console.log(`Xin chào ${name} !`);
 hello("NIIT"); // Xin chào NIIT!
 
 // Nhiều tham số, Một câu lệnh
@@ -212,11 +212,11 @@ console.log(arrayNumbers(3, 5, 7, 1, 0));
 //======================================================================================================================================
 // 10: SPREAD OPERATOR
 
-function addNumbers(a, b, c) {
-    return a + b + c;
+function addNumbers(a, b, c, d) {
+    return a + b + c + d;
 }
 
-let numbers = [2, 3, 4];
+let numbers = [2, 3, 4, 5];
 
 // Trong ES5
 // Cách truyền mảng làm đối số của hàm
@@ -300,9 +300,6 @@ promise.then(value => {
 const getJSON = new Promise(function (resolve) {
     axios.get('https://tutorialzine.com/misc/files/example.json')
         .then(function (json) {
-
-            // The data from the request is available in a .then block
-            // We return the result using resolve.
             resolve(json);
         });
 });
@@ -321,14 +318,8 @@ axios.get('https://tutorialzine.com/misc/files/example.json')
 // cách 2:
 // Async/Await approach
 
-// The async keyword will automatically create a new Promise and return it.
 const getJSONAsync = async () => {
-
-    // The await keyword saves us from having to write a .then() block.
     let json = await axios.get('https://tutorialzine.com/misc/files/example.json');
-
-    // The result of the GET request is available in the json variable.
-    // We return it just like in a regular synchronous function.
     return json;
 }
 

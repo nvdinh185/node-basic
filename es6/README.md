@@ -1,3 +1,5 @@
+# https://www.javascripttutorial.net/es6
+
 1. TỪ KHÓA let
 
 2. TỪ KHÓA const
@@ -23,3 +25,9 @@
 12. MODULES
 
 13. PROMISE
+
+=========================================================================================
+
+## https://browserify.org/
+
+# browserify app2.js -o app2Handler.js
